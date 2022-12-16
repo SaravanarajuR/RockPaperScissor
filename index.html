@@ -1,0 +1,125 @@
+<h1 class="text" id="head">Hello</h1>
+<h2 class="text" id="tail">Lets start the game</h2>
+
+<div class="rps">
+<button class="button" onclick="rand('rock')">🪨</button>
+<button class="button" onclick="rand('paper')">🗞️</button>
+<button class="button" onclick="rand('scissors')">✂️</button>
+</div>
+
+<div class="rps2">
+<table class="tbl text">
+    <tr>
+        <th>Your choice</th>
+        <th>Opponent</th>
+    </tr>
+    <tr>
+       <td><button class="rbutton" id="rbutton1">🪨</button></td> 
+       <td><button class="rbutton" id="rbutton2">🗞️</button>
+       </td>
+    </tr>
+</table>
+</div>
+
+<style>
+body{
+    background-image: url(https://images.pexels.com/photos/952670/pexels-photo-952670.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+}
+   .button{
+    padding:30px;
+    font-size: 80px;
+    margin:20px;
+}
+th{
+padding:20px;  
+}
+.rps{
+    text-align: center;
+}
+.text{
+text-align: center;
+font-size: 50px;
+color:aliceblue;
+}
+.rbutton{
+    padding:30px;
+    font-size: 80px;
+    margin:20px;
+}
+.tbl{
+    margin-left:auto;
+    margin-right:auto;
+}
+</style>
+  
+
+<script>
+     function rand(choice){
+        let rand1=Math.floor(Math.random()*3)+1;
+        let inter=choice;
+        console.log(rand1);
+        if(rand1==1){
+            let res=document.getElementById("head");
+            if(choice=='rock'){
+            res.innerText=choice + " and rock";
+            document.getElementById("tail").innerText="Draw";
+            document.getElementById("rbutton1").innerText="🪨";
+            document.getElementById("rbutton2").innerText="🪨";
+            }
+            else if(choice=='paper'){
+                res.innerText=choice + " and rock";
+                document.getElementById("tail").innerText="You win!!!";
+                document.getElementById("rbutton1").innerText="🗞️";
+                document.getElementById("rbutton2").innerText="🪨";
+            }
+            else if(choice=='scissors'){
+                res.innerText=choice + " and rock";
+                document.getElementById("tail").innerText="You Lose!!!";
+                document.getElementById("rbutton1").innerText="✂️";
+                document.getElementById("rbutton2").innerText="🪨";
+            }
+        }
+        else if(rand1==2){
+            let res=document.getElementById("head");
+            if(choice=='rock'){
+                res.innerText=choice + " and paper";
+            document.getElementById("tail").innerText="You Lose";
+            document.getElementById("rbutton1").innerText="🪨";
+            document.getElementById("rbutton2").innerText="🗞️";
+            }
+            else if(choice=='paper'){
+                res.innerText=choice + " and paper";
+                document.getElementById("tail").innerText="Draw";
+                document.getElementById("rbutton1").innerText="🗞️";
+            document.getElementById("rbutton2").innerText="🗞️";
+            }
+            else if(choice=='scissors'){
+                res.innerText=choice + " and paper";
+                document.getElementById("tail").innerText="You Win!!!";
+                document.getElementById("rbutton1").innerText="✂️";
+            document.getElementById("rbutton2").innerText="🗞️";
+            }
+        }
+        else if(rand1==3){
+            let res=document.getElementById("head");
+            if(choice=='rock'){
+                res.innerText== choice + " and scissors";
+            document.getElementById("tail").innerText="You Lose";
+            document.getElementById("rbutton1").innerText="🪨";
+            document.getElementById("rbutton2").innerText="✂️";
+            }
+            else if(choice=='paper'){
+                res.innerText== choice + " and scissors";
+                document.getElementById("tail").innerText="You Win!!!!";
+                document.getElementById("rbutton1").innerText="🗞️";
+            document.getElementById("rbutton2").innerText="✂️";
+            }
+            else if(choice=='scissors'){
+                res.innerText== choice + " and scissors";
+                document.getElementById("tail").innerText="Draw!!!";
+                document.getElementById("rbutton1").innerText="✂️";
+            document.getElementById("rbutton2").innerText="✂️";
+            }
+        }
+     }
+</script>
